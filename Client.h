@@ -7,6 +7,7 @@ class Client
 public:
 	Client();
 	void run();
+
 private:
 	void render();
 	void handleInput();
@@ -25,4 +26,3 @@ private:
 	sf::RenderWindow window;
 	uint8_t board[3][3];
 };
-

@@ -7,9 +7,9 @@ class Server
 public:
 	Server();
 	void run();
+
 private:
 	std::vector<sf::TcpSocket *> clients;
 	sf::SocketSelector selector;
 	sf::TcpListener listener;
 };
-

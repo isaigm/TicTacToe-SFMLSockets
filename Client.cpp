@@ -26,8 +26,10 @@ Client::Client() : window(sf::VideoMode(800, 600), "Tic Tac Toe multiplayer", sf
 	{
 		canMove = true;
 	}
-	for (int i = 0; i < 3; i++) {
-		for (int j = 0; j < 3; j++) {
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
 			board[i][j] = EMPTY;
 			sf::RectangleShape r;
 			sf::Vector2f size(S, S);
@@ -210,7 +212,7 @@ bool Client::won(int player, int x, int y)
 	return false;
 }
 
-bool Client::chooseCell(int player, const sf::Vector2i & mousePos)
+bool Client::chooseCell(int player, const sf::Vector2i &mousePos)
 {
 	for (const auto &r : rects)
 	{
