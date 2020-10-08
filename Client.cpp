@@ -10,6 +10,10 @@ Client::Client() : window(sf::VideoMode(800, 600), "Tic Tac Toe multiplayer", sf
 		std::cout << "Cannot load font\n";
 		exit(1);
 	}
+	whoWon.setCharacterSize(70);
+	whoWon.setFont(font);
+	whoWon.setStyle(sf::Text::Regular);
+	whoWon.setPosition(10, 10);
 	sf::Packet packet;
 	socket.connect(IP_ADDRESS, PORT);
 	if (socket.receive(packet) != sf::TcpSocket::Done)
@@ -53,20 +57,23 @@ void Client::run()
 			int x = -1;
 			int y = -1;
 			int splayer = 0;
-			int whoWon = 0;
 			sf::Packet packet;
 			if (socket.receive(packet) == sf::TcpSocket::Done)
 			{
 				packet >> x;
 				packet >> y;
 				packet >> splayer;
-				packet >> whoWon;
+				packet >> wWon;
 				if (playerID != splayer)
 				{
 					makeMove((playerID % 2) + 1, x, y);
-					if (whoWon != 0)
+					if (wWon != 0)
 					{
 						finishedGame = true;
+						if (wWon != playerID) {
+							whoWon.setFillColor(sf::Color::Red);
+							whoWon.setString("You Lose!");
+						}
 					}
 					canMove = true;
 				}
@@ -88,6 +95,7 @@ void Client::render()
 	{
 		window.draw(m);
 	}
+	window.draw(whoWon);
 	window.display();
 }
 
@@ -111,7 +119,8 @@ void Client::handleInput()
 					canMove = false;
 					if (wWon != 0)
 					{
-						std::cout << "player: " << wWon << " has won\n";
+						whoWon.setFillColor(sf::Color::Green);
+						whoWon.setString("You Win");
 						finishedGame = true;
 					}
 				}
@@ -198,7 +207,7 @@ bool Client::won(int player, int x, int y)
 		if (count == 3)
 			return true;
 	}
-	if ((x == 1 && y == 1) || (x == 2 && y == 0) || (x == 0 && y == 2))
+	if (2 - x == y)
 	{
 		count = 0;
 		for (int i = 2; i >= 0; i--)

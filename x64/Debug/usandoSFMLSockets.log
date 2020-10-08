@@ -1,2 +1,29 @@
-﻿  Server.cpp
+﻿  Client.cpp
+c:\users\isaig\source\repos\usandosfmlsockets\usandosfmlsockets\client.cpp(7): warning C4305: 'argumento': truncamiento de 'int' a 'bool'
+c:\users\isaig\source\repos\usandosfmlsockets\usandosfmlsockets\client.cpp(41): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\isaig\source\repos\usandosfmlsockets\usandosfmlsockets\client.cpp(116): warning C4244: 'argumento': conversión de 'sf::Uint64' a 'int'; posible pérdida de datos
+c:\users\isaig\source\repos\usandosfmlsockets\usandosfmlsockets\client.cpp(167): warning C4244: 'argumento': conversión de 'int' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+c:\users\isaig\source\repos\usandosfmlsockets\usandosfmlsockets\client.cpp(228): warning C4244: 'argumento': conversión de 'const T' a 'T'; posible pérdida de datos
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+c:\users\isaig\source\repos\usandosfmlsockets\usandosfmlsockets\client.cpp(230): warning C4244: 'inicializando': conversión de 'T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+c:\users\isaig\source\repos\usandosfmlsockets\usandosfmlsockets\client.cpp(231): warning C4244: 'inicializando': conversión de 'T' a 'int'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
   usandoSFMLSockets.vcxproj -> C:\Users\isaig\source\repos\usandoSFMLSockets\x64\Debug\usandoSFMLSockets.exe

@@ -1,6 +1,3 @@
-#include <SFML/Network.hpp>
-#include <SFML/Graphics.hpp>
-#include <thread>
 #include <iostream>
 #include "Server.h"
 #include "Client.h"

@@ -22,6 +22,7 @@ private:
 	sf::TcpSocket socket;
 	std::vector<sf::RectangleShape> rects;
 	std::vector<sf::Text> moves;
+	sf::Text whoWon;
 	sf::Font font;
 	sf::RenderWindow window;
 	uint8_t board[3][3];
