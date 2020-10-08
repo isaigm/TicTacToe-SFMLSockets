@@ -1,0 +1,4 @@
+﻿  usandoSFMLSockets.cpp
+c:\users\isaig\source\repos\usandosfmlsockets\usandosfmlsockets\usandosfmlsockets.cpp(25): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+c:\users\isaig\source\repos\usandosfmlsockets\usandosfmlsockets\usandosfmlsockets.cpp(139): error C4996: 'sf::Text::setColor': se declaró desusado
+  c:\users\isaig\src\vcpkg\installed\x86-windows\include\sfml\graphics\text.hpp(210): note: vea la declaración de 'sf::Text::setColor'
