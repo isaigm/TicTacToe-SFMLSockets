@@ -5,7 +5,7 @@
 Client::Client() : window(sf::VideoMode(800, 600), "Tic Tac Toe multiplayer", sf::Style::Titlebar | sf::Style::Close)
 {
 	window.setVerticalSyncEnabled(60);
-	if (!font.loadFromFile("C:\\Users\\isaig\\Desktop\\arial.ttf"))
+	if (!font.loadFromFile("arial.ttf"))
 	{
 		std::cout << "Cannot load font\n";
 		exit(1);
@@ -50,7 +50,7 @@ Client::Client() : window(sf::VideoMode(800, 600), "Tic Tac Toe multiplayer", sf
 
 void Client::run()
 {
-	//warning: this code is unsafe because produces memory inconsistencies
+	//warning: insecure code because of race conditions
 	std::thread th([this]() {
 		while (true)
 		{
@@ -70,7 +70,8 @@ void Client::run()
 					if (wWon != 0)
 					{
 						finishedGame = true;
-						if (wWon != playerID) {
+						if (wWon != playerID)
+						{
 							whoWon.setFillColor(sf::Color::Red);
 							whoWon.setString("You Lose!");
 						}

@@ -21,14 +21,18 @@ void Server::run()
 					selector.add(*client);
 					clients.push_back(client);
 					sf::Packet packet;
-					packet << (clients.size() % 2) + 1;
+					packet << sf::Uint64((clients.size() % 2) + 1);
 					client->send(packet);
 				}
 				else
+				{
 					delete client;
+				}
 			}
 			else
+			{
 				delete client;
+			}
 		}
 		else
 		{
